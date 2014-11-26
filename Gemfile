@@ -6,6 +6,7 @@ gem 'pg', '0.17.1'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'settingslogic'
+gem 'devise'
 
 #assets
 gem 'sass-rails', '~> 4.0.3'

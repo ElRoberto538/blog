@@ -1,10 +1,10 @@
 == README
 
-Requires: 
+Requires:
 * Ruby 2.1+
 * Imagemagick
 * PostgreSQL
-* An AWS S3 bucket 
+* An AWS S3 bucket
 
 To run:
 * run 'bundle install'
@@ -18,7 +18,7 @@ To run:
 * run 'rake db:setup' to create the database and load the schema
 * run 'rails s' to run rails server
 * visit http://localhost:3000
-  
+
 TODO:
 * Tests
 * UI

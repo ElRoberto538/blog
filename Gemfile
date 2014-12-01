@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
+gem 'active_model_serializers', '0.8.2'
 gem 'pg', '0.17.1'
 
 gem 'carrierwave'

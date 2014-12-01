@@ -1,9 +1,11 @@
 <h1>Blog</h1>
 
 <div>
+  <h2>Posts</h2>
   {{#each post in model}}
     <img {{bind-attr src=post.image_url}}>
-    <p>{{post.name}}</p>
+    <p>{{link-to post.name 'posts.show' post}}</p>
     <p>{{post.content}}</p>
+    <hr>
   {{/each}}
 </div>

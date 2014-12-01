@@ -1,0 +1,9 @@
+<h1>Blog</h1>
+
+<div>
+  {{#each post in model}}
+    <img {{bind-attr src=post.image_url}}>
+    <p>{{post.name}}</p>
+    <p>{{post.content}}</p>
+  {{/each}}
+</div>

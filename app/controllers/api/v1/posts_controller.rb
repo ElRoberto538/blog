@@ -20,14 +20,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    post = Post.new(post_params)
 
-    respond_to do |format|
-      if @post.save
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if post.save
+      respond_with :api, :v1, post
+    else
+      render json: post.errors, status: :unprocessable_entity
     end
   end
 
@@ -55,6 +53,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post_params
-    params[:post].permit(:name, :content, :image)
+    params.permit(:name, :content, :image)
   end
 end

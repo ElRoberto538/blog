@@ -1,6 +1,17 @@
 <h1>Blog</h1>
 
 <div>
+  <h2>New Post</h2>
+
+  <form id="new-post" method="post">
+    {{input id="new-name" placeholder="Title" value=newName}}
+    {{input id="new-image" name="image" type="file" value=newImage}}
+    {{textarea id="new-content" placeholder="Content" value=newContent}}
+    <div {{action "createPost"}}>Create</div>
+  </form>
+</div>
+
+<div>
   <h2>Posts</h2>
   {{#each post in model}}
     <img {{bind-attr src=post.image_url}}>

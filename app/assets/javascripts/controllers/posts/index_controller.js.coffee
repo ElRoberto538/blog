@@ -4,7 +4,6 @@ Blog.PostsIndexController = Ember.ArrayController.extend
       formData = new FormData($('#new-post')[0])
       formData.append('name', @get('newName'))
       formData.append('content', @get('newContent'))
-      # formData.append('image', @get('newImage'))
 
       response = $.ajax
         data: formData
@@ -14,18 +13,10 @@ Blog.PostsIndexController = Ember.ArrayController.extend
         type: 'POST'
         url: '/api/v1/posts.json'
       response.done (data) ->
-        alert 'done'
+        alert 'Successully created post'
       response.fail (data) ->
-        alert 'failed'
+        alert 'Failed to create post'
 
-      # post = @store.createRecord 'post',
-      #   name: @get('newName')
-      #   content: @get('newContent')
-      #   image: @get('newImage')
-      #
-      #
-      # @set('newName', '')
-      # @set('newContent', '')
-      # @set('newImage', '')
-      #
-      # post.save()
+    deletePost: (post)->
+      post.destroyRecord().then ->
+        alert('Successfully removed post')

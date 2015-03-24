@@ -17,6 +17,7 @@
     <img {{bind-attr src=post.image_url}}>
     <p>{{link-to post.name 'posts.show' post}}</p>
     <p>{{post.content}}</p>
+    <div {{action "deletePost" post}}>delete</div>
     <hr>
   {{/each}}
 </div>
